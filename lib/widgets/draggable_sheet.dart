@@ -89,7 +89,7 @@ class _DraggableBottomSheetState extends State<DraggableBottomSheet> {
         minChildSize: 0.08,
         maxChildSize: 0.9,
         controller: _bottomSheetController,
-        snap: true,
+        // snap: true,
         builder: (context, scrollController) {
           return Container(
             decoration: const BoxDecoration(
@@ -225,8 +225,8 @@ class _DraggableBottomSheetState extends State<DraggableBottomSheet> {
                         ),
                         const SizedBox(height: 24),
                         // Divider - with paddings
-                        const Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
+                         Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
                           child: CustomDivider(),
                         ),
                         const SizedBox(height: 24),
@@ -261,8 +261,8 @@ class _DraggableBottomSheetState extends State<DraggableBottomSheet> {
                         ),
                         const SizedBox(height: 24),
                         // Divider - with paddings
-                        const Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
+                        Padding(
+                          padding:const EdgeInsets.symmetric(horizontal: 20),
                           child: CustomDivider(),
                         ),
                         const SizedBox(height: 24),

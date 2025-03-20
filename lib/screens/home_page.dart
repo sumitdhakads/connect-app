@@ -1,3 +1,5 @@
+import 'package:connect/screens/manage_eventspage.dart';
+import 'package:connect/screens/pastevent_detail.dart';
 import 'package:connect/utils/app_color.dart';
 import 'package:connect/widgets/custom_appbar.dart';
 import 'package:connect/widgets/custom_eventcard.dart';
@@ -29,12 +31,20 @@ class _HomePageState extends State<HomePage> {
     super.dispose();
   }
 
-
   void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+    if (index == 3) {
+      // Navigate to the ManageEventPage when Events tab is clicked
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) =>  ManageEventPage()),
+      );
+    } else {
+      setState(() {
+        _selectedIndex = index;
+      });
+    }
   }
+
 
   List<String> carouselImages = [ImageUtils.carouselImage1, ImageUtils.carouselImage2,
     ImageUtils.carouselImage3, ImageUtils.carouselImage1,ImageUtils.carouselImage2];
@@ -106,6 +116,8 @@ class _HomePageState extends State<HomePage> {
                                 subtitle: 'ABC Fitness Hub',
                                 onTap: () {
                                   // print('Card $index tapped');
+                               Navigator.push(context,
+                                   MaterialPageRoute(builder: (context) => PastEventDetails()));
                                 },
                               ),
                             ),
@@ -320,7 +332,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                           SvgPicture.asset(
-                            ImageUtils.connectIcon,
+                            ImageUtils.eventIcon,
                             width: 28,
                             height: 28,
                             colorFilter: ColorFilter.mode(
@@ -332,7 +344,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ],
                   ),
-                  label: 'Connect',
+                  label: 'Events',
                 ),
               ],
             ),
